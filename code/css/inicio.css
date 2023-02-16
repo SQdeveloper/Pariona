@@ -1,0 +1,348 @@
+/********** General ************/
+
+@font-face {
+    font-family: "m";
+    src: url("../../rg/fonts/m/Raleway-Regular.ttf");
+}
+
+@font-face {
+    font-family: "b";
+    src: url("../../rg/fonts/m/Raleway-Bold.ttf");
+}
+
+@font-face {
+    font-family: "l";
+    src: url("../../rg/fonts/m/Raleway-Light.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-red       : #D42C30;
+    --color-after     : #D42C30;
+    --color-gray      : #ababab;
+    --color-gray-claro: #e6e3e3;
+}
+
+body {
+    font-family: "m";
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+main {
+    height: 200vh;
+    background-color: var(--color-gray);
+}
+
+/************* Header **************/
+header {
+    position: fixed;
+    width: 100%;
+    height: 160px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    color: white;
+    font-size: 18px;
+    transition: background-color .5s;
+    z-index: 1;
+}
+
+header.active {
+    border-bottom: 1px solid white;
+    background-color: var(--color-red);
+    height: 120px;
+}
+
+header .logo {
+    width: 200px;
+}
+
+@keyframes change {
+    0% {
+        width: 50px;
+    }
+    100% {
+        width: 100px;
+    }
+}
+
+header .logo.active {
+    animation: change 1s;
+    animation-fill-mode: forwards;
+}
+
+header ul {
+    display: flex;
+    gap: 20px;
+}
+
+header ul a:hover::after {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
+header ul a::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-after);
+    margin-top: 9px;
+    transition: clip-path .5s;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+
+header .redes img {
+    filter: invert(100%);
+}
+
+
+/************ Home **************/
+.home {
+    position: relative;
+    background:linear-gradient(rgba(0,0,0,.4) 100%, transparent) , url("../../rg/img/inicio.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    color: white;
+}
+
+.home h1 {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 48px;
+    font-family: "b";
+    text-align: center;
+}
+
+.home span {
+    color: var(--color-red);
+}
+
+/************* Banner *************/
+.banner {
+    background-color: var(--color-red);
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    color: white;   
+    gap: 40px;
+    width: 90%;
+    margin: auto;
+    border-radius: 20px;
+    height: 150px;
+    position: relative;
+    top: -75px;
+} 
+
+.banner div {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.banner img {
+    filter: invert(100%);
+    width: 90px;
+}
+
+/************ Especialidades *************/
+.especialidades {
+    text-align: center;
+    background: var(--color-gray);
+    padding-bottom: 30px;
+}
+
+.especialidades img {
+    width: 100%;
+    height: 100%;
+}
+
+.especialidades h2 {
+    font-size: 45px;
+    font-family: "b";
+    margin-bottom: 20px;
+}
+
+.especialidades p {
+    width: 50%;
+    margin: auto;
+    font-size: 20px;
+}
+
+.box-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 70%;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.box-cont {
+    padding: 70px 30px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.box-cont:hover {
+    background-color: rgb(247, 247, 247);
+}
+
+.box-cont div {
+    margin: auto;
+    width: 140px;
+    height: 140px;
+    border: 3px solid white;
+    border-radius: 50%;
+    background-color: #e9e7e7;
+    margin-bottom: 25px;
+}
+
+.box-cont span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/************** Publicaciones ***************/
+
+.publicaciones {
+    text-align: center;
+    background-color: var(--color-gray-claro);
+    padding: 40px 0;
+}
+
+.publicaciones > h2 {
+    font-size: 45px;
+    font-family: "b";
+}
+
+.cont-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    width: fit-content;
+    margin: 30px auto;
+    background-color: white;
+    box-shadow: 2px 2px 9px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    overflow: hidden;
+}
+
+.cont-buttons button:first-child {
+    background-color: var(--color-red);
+}
+
+.cont-buttons button{
+    color: black;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-color: transparent;
+}
+.cont-buttons button:first-child {
+    color: white;
+}
+
+
+.slider {
+    width: 65%;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    padding-top: 20px;
+}
+
+.slider .bg {
+    width: 100%;
+    height: 280px;
+}
+
+.box a {
+    background-color: var(--color-red);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid var(--color-red)
+}
+
+.box a:hover {
+    color: var(--color-red);
+    background-color: white;
+}
+
+.box > div {
+    padding: 20px 15px;
+    text-align: start;
+    background-color: white;
+    height: 100%;
+}
+
+.box {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.box span {
+    color: gray;
+}
+
+.box p {
+    font-weight: bold;
+}
+
+.box h2 {
+    padding: 8px 0;
+    font-size: 20px;
+}
+
+.box .foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.sliderMove {
+    display: flex;
+    width: 300%;
+}
+
+.caja {
+    width: calc(100% / 3);
+    opacity: 0;
+    transition: opacity .8s;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.caja:first-child {
+    opacity: 1;
+}
