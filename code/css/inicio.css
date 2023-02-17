@@ -121,6 +121,52 @@ header .redes img:hover {
     filter: invert(15%) sepia(33%) saturate(7368%) hue-rotate(346deg) brightness(78%) contrast(105%);
 }
 
+header button {
+    position: fixed;
+    background-color: transparent;
+    left: 20px;
+    top: 55px;
+    display: none;
+}
+
+header button img {
+    width: 50px;
+    height: 40px;
+}
+
+header .menu {
+    position: fixed;
+    width: 100%;
+    top: 160px;
+    padding: 30px;
+    left: 0;
+    background-color: var(--color-red);
+    display: none;
+}
+
+header .menu.active {
+    display: flex;
+}
+
+header .menu ul {
+    flex-direction: column;
+}
+
+header .menu ul a:hover::after {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
+header .menu ul a::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-after);
+    margin-top: 9px;
+    transition: clip-path .5s;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+
 /************ Home **************/
 .home {
     position: relative;
@@ -439,7 +485,6 @@ footer .redes {
     margin-top: 30px;
 }
 
-
 footer .redes img {
     width: 30px;
     filter: invert(100%);
@@ -447,4 +492,153 @@ footer .redes img {
 
 footer .redes img:hover {
     filter: invert(15%) sepia(33%) saturate(7368%) hue-rotate(346deg) brightness(78%) contrast(105%);
+}
+
+/************** Querys *****************/
+@media (max-width: 1200px) {
+    /************ Header ************/
+    header .logo {
+        width: 100px;
+    }
+}
+
+@media (max-width: 1024px) {
+    /************ Header ************/
+    header > ul , header .redes {
+        display: none;
+    }
+
+    header button {
+        display: flex;
+    }
+
+    header {
+        justify-content: center;
+    }
+
+    header .logo {
+        margin-top: 25px;
+        width: 220px;
+    }
+
+    /************ Espacialidades **************/
+    .box-cont {
+        padding: 30px;
+    }
+    .box-grid {
+        grid-template-columns: 1fr 1fr;
+        width: 80%;
+    }
+
+    .especialidades p {
+        width: 80%;
+    }
+
+    .slider {
+        width: 70%;
+    }
+
+    /************* Publicaciones ************/
+    .caja {
+        grid-template-columns: 1fr;
+    }
+
+    /************** Footer **************/
+    footer {
+        flex-direction: column;
+        padding-bottom: 100px;
+    }
+
+    footer .container {
+        width: auto;
+        position: relative;
+    }
+
+    footer .redes {
+        position: absolute;
+        bottom: -70px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /************* Banner ***************/
+    .banner {
+        flex-direction: column;
+        align-items: start;
+        height: auto;
+        padding: 30px;
+        width: 75%;
+        gap: 20px;
+    }
+
+    .banner img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    /*********** Header ************/
+    header .logo {
+        width: 140px;
+    }
+
+    /************ Home ************/
+    .home {
+        height: 80vh;
+    }
+
+    /********* Footer ***********/
+    footer {
+        padding: 40px 20px;
+        padding-bottom: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    /*********** Home ************/
+    .home h1 {
+        font-size: 38px;
+    }    
+
+    /*********** Especialidades **************/
+    .box-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .especialidades h2 {
+        font-size: 38px;
+    }
+
+    .especialidades p {
+        font-size: 18px;
+    }
+
+    /*********** Publicaciones ***********/
+    .publicaciones h2 {
+        font-size: 38px;
+    }
+
+    .cont-buttons {
+        width: 80%;
+        gap: 0;
+    }
+
+    .publicaciones .box h2 {
+        font-size: 28px;
+    }
+
+    .cont-buttons button {
+        font-size: 15px;
+        padding: 8px 5px;
+    }
+
+    /********** Slider ***********/
+    .slider {
+        width: 90%;
+    }
+
+    .caja {
+        height: fit-content;
+    }
 }
