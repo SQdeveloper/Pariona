@@ -47,7 +47,7 @@ ul {
 }
 
 main {
-    background-color: var(--color-gray-claro);
+    background-color: var(--color-gray);
 }
 
 /************* Header **************/
@@ -121,74 +121,84 @@ header .redes img:hover {
     filter: invert(15%) sepia(33%) saturate(7368%) hue-rotate(346deg) brightness(78%) contrast(105%);
 }
 
-/*********** Bg *************/
+/************** Bg ****************/
 .bg {
+    position: relative;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,.3) 100%, transparent), url("../../rg/img/contacto.jpg");
+    background: linear-gradient(rgba(0,0,0,.5) 100%, transparent), url("../../rg/img/catedra.jpg");
     background-size: cover;
 }
 
-/************ Banner **************/
-.banner {
-    width: 65%;
-    border-radius: 20px;
-    overflow: hidden;
-    margin: auto;
+.bg div {
+    position: absolute;
+    bottom: 80px;
     color: white;
-    font-size: 18px;
-    position: relative;
-    top: -140px;
+    width: 520px;
+    font-size: 22px;
+    text-align: start;
+    left: 170px;
 }
 
-.red {
-    background-color: var(--color-red);
-    padding: 60px 120px;
-    line-height: 30px;
-    text-align: center;
+.bg h1 {
+    font-size: 45px;
+    margin-bottom: 20px;
 }
 
-.red .redes {
-    margin-top: 28px;
+.bg p {
+    line-height: 33px;
 }
 
-.red img {
-    width: 40px;
-    height: 40px;
-    filter: invert(100%);
-    margin-left: 10px;
-}
-
-.red img:hover {
-    filter: invert(15%) sepia(33%) saturate(7368%) hue-rotate(346deg) brightness(78%) contrast(105%);
-}
-
-.white {
-    background-color: white;
-    color: black;
-    padding: 25px 50px 35px;
-}
-
-.white h2 {
-    font-family: "b";
-    font-size: 42px;
-}
-
-.white div {
-    display: flex;
-    align-items: center;
-    margin: 25px 0 0 160px;
-}
-
-.white img {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-}
-
-.banner iframe {
+/*************** Cont-cards *****************/
+.cont-cards {
     width: 100%;
-    height: 450px;
+    background-color: var(--color-gray-claro);
+    padding: 70px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.card {
+    width: 70%;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cont-img {
+    width: 25%;
+    background-color: var(--color-gray);
+    position: relative;
+}
+
+.cont-img div {
+    background-color: var(--color-gray-claro);
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    border: 3px solid white;
+    position: absolute;
+    right: -70px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cont-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.cont-text {
+    background-color: white;
+    width: 75%;
+    padding: 30px 90px;
+}
+
+.cont-text p {
+    line-height: 30px;
+    margin-top: 16px;
 }
 
 /************ Footer ************/
