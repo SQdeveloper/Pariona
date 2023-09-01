@@ -110,6 +110,10 @@ header ul a::after {
     clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }
 
+header ul a.active::after {        
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
 header .redes img {
     filter: invert(100%);
     width: 20px;

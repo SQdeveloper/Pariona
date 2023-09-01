@@ -110,6 +110,10 @@ header ul a::after {
     clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }
 
+header ul a.active::after {        
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
 header .redes img {
     filter: invert(100%);
     width: 20px;
@@ -171,7 +175,7 @@ header .menu ul a::after {
 .bg {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,.3) 100%, transparent), url("../../rg/img/contacto.jpg");
+    background: linear-gradient(rgba(0,0,0,.3) 100%, transparent), url("../../rg/img/firma.jpg");
     background-size: cover;
 }
 

@@ -1,11 +1,11 @@
 const header  = document.querySelector("header");
-const enlaces = document.querySelectorAll("header ul a");
 const menu    = document.querySelector("header .menu");
 const logo    = document.querySelector(".logo");
 const button  = document.querySelector("header button");
 const body    = document.body;
 let value = false;
 
+//codigo para activar la animación del header(barra de navegación)
 document.addEventListener("scroll", ()=>{
     if(this.scrollY > 0) {
         header.classList.add("active");
