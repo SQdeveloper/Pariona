@@ -177,6 +177,7 @@ header .menu ul a::after {
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,.3) 100%, transparent), url("../../rg/img/firma.jpg");
     background-size: cover;
+    background-position: center center;
 }
 
 /************ Banner **************/
